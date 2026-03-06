@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kanbify</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="asset/logo.png" alt="Kanbify Logo" class="logo">
+  <h1>My Kanbify Board</h1>
+  <button id="menuBtn" class="menuBtn">☰</button> <!-- Add class for CSS -->
+</header>
+
+<!-- SIDE DASHBOARD -->
+<div id="sideDashboard" class="side-dashboard">
+  <input id="taskInput" placeholder="Enter task title">
+  <input id="taskDesc" placeholder="Enter description">
+  <select id="priority">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <button id="addTaskBtn">Add Task</button>
+  <input id="search" placeholder="Search tasks">
+  <button id="darkToggle">🌙 Dark Mode</button>
+</div>
+
+<!-- DASHBOARD CHARTS -->
+<div class="dashboard">
+  <div class="chartBox">
+    <h3>Task Status</h3>
+    <canvas id="taskChart" width="350" height="350"></canvas>
+  </div>
+  <div class="chartBox">
+    <h3>Task Priority</h3>
+    <canvas id="priorityChart" width="350" height="350"></canvas>
+  </div>
+</div>
+
+<!-- KANBAN BOARD -->
+<div class="board">
+  <div class="column" id="todo"><h2>Todo</h2></div>
+  <div class="column" id="progress"><h2>In Progress</h2></div>
+  <div class="column" id="done"><h2>Done</h2></div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
