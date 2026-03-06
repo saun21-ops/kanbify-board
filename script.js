@@ -176,9 +176,9 @@ task.style.display=task.innerText.toLowerCase().includes(val)?"flex":"none";
 
 function updateCharts(){
 
-const todo=tasks.filter(t=>t.status==="todo").length;
-const progress=tasks.filter(t=>t.status==="progress").length;
-const done=tasks.filter(t=>t.status==="done").length;
+const todo = tasks.filter(t => t.status === "todo").length;
+const progress = tasks.filter(t => t.status === "progress").length;
+const done = tasks.filter(t => t.status === "done").length;
 
 const ctx=document.getElementById("taskChart");
 
@@ -235,5 +235,6 @@ document.addEventListener("click", function(e) {
   if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
       sidebar.classList.remove("open");
   }
+
 
 });
