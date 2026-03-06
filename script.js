@@ -65,11 +65,12 @@ col.innerHTML=`<h2>${title}</h2>`;
 tasks.forEach((task,i)=>{
 
 const div=document.createElement("div");
+;
 
 div.className=`task ${task.priority}`;
 
 div.draggable=true;
-
+div.dataset.index = i;
 div.innerHTML=`
 
 <div class="taskContent">
@@ -144,11 +145,11 @@ const dragging=document.querySelector(".dragging");
 
 if(!dragging) return;
 
-const text=dragging.querySelector("span").innerText;
+const index = dragging.dataset.index;
 
-const task=tasks.find(t=>t.text===text);
-
-if(task) task.status=col.id;
+if(index !== undefined){
+tasks[index].status = col.id;
+}
 
 saveTasks();
 
@@ -238,3 +239,4 @@ document.addEventListener("click", function(e) {
 
 
 });
+
