@@ -112,13 +112,6 @@ div.className=`task ${task.priority}`;
 div.draggable=true;
 div.dataset.index = i;
 div.innerHTML=`
-div.querySelectorAll("button").forEach(btn=>{
-  btn.addEventListener("touchstart", e => e.stopPropagation());
-  });
-
-  div.querySelectorAll("button").forEach(btn=>{
-  btn.addEventListener("click", e => e.stopPropagation());
-});
 
 <div class="taskContent">
 <span>${task.text}</span>
@@ -130,6 +123,14 @@ div.querySelectorAll("button").forEach(btn=>{
 <button class="deleteBtn" onclick="deleteTask(${i})">🗑</button>
 </div>
 `;
+  div.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("touchstart", e => e.stopPropagation());
+  });
+
+  div.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("click", e => e.stopPropagation());
+});
+
 
 div.addEventListener("dragstart",()=>div.classList.add("dragging"));
 div.addEventListener("dragend",()=>div.classList.remove("dragging"));
@@ -289,6 +290,7 @@ document.addEventListener("click", function(e) {
 
 
 });
+
 
 
 
