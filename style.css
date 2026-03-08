@@ -18,7 +18,7 @@ header {
   background-color: #E6E6FA;
   margin-bottom:20px;
   flex-wrap:wrap;
-  grid-template-columns: 1fr auto 1fr;/* Lavender */
+grid-template-columns: 1fr auto 1fr;
 }
 
 
@@ -33,7 +33,7 @@ header .logo {
 }
 
 header h1 {
-  margin: 0 auto;
+  margin: 0 ;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -233,6 +233,7 @@ button { cursor: pointer; }
   }
 
 }
+
 
 
 
