@@ -15,7 +15,9 @@ header {
   align-items: center;          /* Vertically center items */
   height: 60px;
   padding: 0 10px;              /* Small padding on sides */
-  background-color: #E6E6FA;    /* Lavender */
+  background-color: #E6E6FA;
+  margin-bottom:20px;
+  flex-wrap:wrap;/* Lavender */
 }
 header .logo {
   position: absolute;             /* Remove from flex centering */
@@ -187,3 +189,23 @@ button { cursor: pointer; }
   }
 
 }
+@media (max-width:768px){
+
+  header{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  h1{
+    font-size:20px;
+    text-align:center;
+    flex:1;
+  }
+
+  #hamburger{
+    font-size:22px;
+  }
+
+}
+
