@@ -13,6 +13,46 @@ const menuBtn=document.getElementById("menuBtn");
 const search=document.getElementById("search");
 
 const darkToggle=document.getElementById("darkToggle");
+let touchTask = null;
+
+function handleTouchStart(e){
+  touchTask = e.currentTarget;
+  touchTask.classList.add("dragging");
+}
+
+function handleTouchMove(e){
+  e.preventDefault();
+}
+
+function handleTouchEnd(e){
+
+  if(!touchTask) return;
+
+  const touch = e.changedTouches[0];
+
+  const dropTarget = document.elementFromPoint(
+    touch.clientX,
+    touch.clientY
+  );
+
+  const column = dropTarget?.closest(".column");
+
+  if(column){
+    column.appendChild(touchTask);
+
+    const index = touchTask.dataset.index;
+
+    if(index !== undefined){
+      tasks[index].status = column.id;
+    }
+
+    saveTasks();
+    render();
+  }
+
+  touchTask.classList.remove("dragging");
+  touchTask = null;
+}
 
 
 menuBtn.onclick=()=>sidebar.classList.toggle("open");
@@ -87,6 +127,10 @@ div.innerHTML=`
 
 div.addEventListener("dragstart",()=>div.classList.add("dragging"));
 div.addEventListener("dragend",()=>div.classList.remove("dragging"));
+  
+div.addEventListener("touchstart", handleTouchStart);
+div.addEventListener("touchmove", handleTouchMove);
+div.addEventListener("touchend", handleTouchEnd);
 
 document.getElementById(task.status).appendChild(div);
 
@@ -239,4 +283,5 @@ document.addEventListener("click", function(e) {
 
 
 });
+
 
