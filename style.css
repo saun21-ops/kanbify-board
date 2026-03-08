@@ -204,9 +204,24 @@ button { cursor: pointer; }
   }
 
   #hamburger{
-    font-size:22px;
+    position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:22px;
+  cursor:pointer;
   }
 
 }
+@media (max-width:768px){
+
+  h1{
+    font-size:20px;
+    text-align:center;
+    padding:0 40px;
+  }
+
+}
+
 
 
