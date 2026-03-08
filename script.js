@@ -112,6 +112,13 @@ div.className=`task ${task.priority}`;
 div.draggable=true;
 div.dataset.index = i;
 div.innerHTML=`
+div.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("touchstart", e => e.stopPropagation());
+  });
+
+  div.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("click", e => e.stopPropagation());
+});
 
 <div class="taskContent">
 <span>${task.text}</span>
@@ -119,10 +126,9 @@ div.innerHTML=`
 </div>
 
 <div class="taskActions">
-<button onclick="editTask(${i})">✎</button>
-<button onclick="deleteTask(${i})">🗑</button>
+<button class="editBtn" onclick="editTask(${i})">✎</button>
+<button class="deleteBtn" onclick="deleteTask(${i})">🗑</button>
 </div>
-
 `;
 
 div.addEventListener("dragstart",()=>div.classList.add("dragging"));
@@ -283,5 +289,6 @@ document.addEventListener("click", function(e) {
 
 
 });
+
 
 
