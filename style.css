@@ -27,6 +27,7 @@ header .logo {
   position: absolute;             /* Remove from flex centering */
   left: 10px;                     /* 10px from the left edge */
   top: 50%;
+  margin-top: -5px;
   transform: translateY(-50%);    /* Vertically center */
   height:100px;                   /* Adjust logo size */
   width: 100px;
@@ -233,6 +234,7 @@ button { cursor: pointer; }
   }
 
 }
+
 
 
 
