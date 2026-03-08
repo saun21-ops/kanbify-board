@@ -225,11 +225,11 @@ button { cursor: pointer; }
 }
 @media (max-width:768px){
 
-  .logo{
+  header.logo{
     height:28px;
   }
 
-  h1{
+  header h1{
     font-size:20px;
     text-align:center;
     padding:0 40px;
@@ -239,6 +239,7 @@ button { cursor: pointer; }
   }
 
 }
+
 
 
 
