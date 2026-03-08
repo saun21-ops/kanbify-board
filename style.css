@@ -234,6 +234,10 @@ button { cursor: pointer; }
   }
 
 }
+.task{
+  touch-action:none;
+}
+
 
 
 
